@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEMURY 広告CV分析 2〜4月</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif; background: #f5f4f0; color: #1a1a18; font-size: 14px; max-width: 480px; margin: 0 auto; }
+.header { background: #1a1a18; color: #fff; padding: 16px; }
+.header-title { font-size: 19px; font-weight: 700; margin-bottom: 3px; }
+.header-sub { font-size: 11px; color: #aaa; line-height: 1.7; }
+.month-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+.badge-apr    { background: #1a1a18; color: #fff; }
+.badge-3month { background: #f0efe9; color: #5f5e5a; }
+.section { padding: 12px 12px 0; }
+.section-label { font-size: 10px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 8px; }
+.metric { background: #fff; border-radius: 10px; padding: 12px 10px; }
+.metric-label { font-size: 10px; color: #888; margin-bottom: 3px; line-height: 1.4; }
+.metric-value { font-size: 20px; font-weight: 700; line-height: 1.1; }
+.metric-sub { font-size: 10px; color: #aaa; margin-top: 3px; }
+.green  { color: #1d9e75; }
+.amber  { color: #ba7517; }
+.red    { color: #e24b4a; }
+.purple { color: #7f77dd; }
+.card { background: #fff; border-radius: 10px; padding: 13px 12px; margin-bottom: 10px; }
+.card-title { font-size: 10px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+.row-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 0.5px solid #f0efe9; font-size: 12px; }
+.row-item:last-child { border-bottom: none; }
+.row-label { color: #555; }
+.row-value { font-weight: 700; text-align: right; }
+.divider { border: none; border-top: 0.5px solid #eee; margin: 10px 0; }
+.tag { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 700; }
+.tag-green { background:#e4f2d6; color:#2d5c0e; }
+.tag-red   { background:#fcebeb; color:#a32d2d; }
+.hl-dark { background:#1a1a18; border-radius:8px; padding:11px 13px; margin-bottom:8px; }
+.insight { background:#1a1a18; color:#fff; border-radius:10px; padding:13px 14px; margin-bottom:10px; }
+.insight-title { font-size:10px; font-weight:700; color:#aaa; text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px; }
+.insight-item { display:flex; gap:8px; margin-bottom:7px; font-size:12px; line-height:1.5; }
+.insight-item:last-child { margin-bottom:0; }
+.dot { width:6px; height:6px; border-radius:50%; flex-shrink:0; margin-top:5px; }
+.dot-green { background:#5dca97; }
+.dot-amber { background:#ef9f27; }
+.dot-red   { background:#e24b4a; }
+.dot-blue  { background:#6ab4f5; }
+.sep { height:6px; background:#f5f4f0; margin:4px 0; }
+.legend-row { display:flex; gap:12px; flex-wrap:wrap; font-size:11px; color:#666; margin-top:8px; }
+.ld { width:10px; height:10px; border-radius:2px; display:inline-block; margin-right:3px; vertical-align:middle; }
+.mini-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-top:10px; }
+.mini-card { background:#fafaf7; border-radius:7px; padding:8px 10px; text-align:center; }
+.mini-month { font-size:10px; color:#888; margin-bottom:4px; }
+.mini-val { font-size:11px; font-weight:700; }
+.footer { padding:16px 12px 32px; text-align:center; font-size:10px; color:#aaa; }
+
+/* SVGグラフ共通 */
+.chart-container { width:100%; margin-bottom:4px; }
+svg { width:100%; display:block; }
+.axis-label { font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Yu Gothic',sans-serif; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-title">NEMURY 広告CV分析</div>
+  <div class="header-sub">
+    2026年2〜4月 ／ LINEweb予約（広告経由）＋ HPB予約<br>
+    店舗別 × メニュー別集計
+  </div>
+</div>
+
+<!-- ===== 4月 ===== -->
+<div class="section" style="padding-top:16px;">
+  <span class="month-badge badge-apr">2026年4月 実績（確定）</span>
+</div>
+
+<!-- 4月 予約数カード -->
+<div class="section">
+  <div class="card" style="margin-bottom:8px;">
+    <div class="card-title">4月 予約数</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:8px;overflow:hidden;border:0.5px solid #f0efe9;">
+      <div style="padding:12px 12px;border-right:0.5px solid #f0efe9;">
+        <div style="font-size:10px;font-weight:700;color:#ef9f27;margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em;">HPB予約</div>
+        <div style="font-size:28px;font-weight:700;line-height:1;margin-bottom:4px;">18件</div>
+        <div style="font-size:11px;color:#aaa;margin-bottom:8px;">¥127,140</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;justify-content:space-between;font-size:11px;"><span style="color:#888;">NEMURY</span><span style="font-weight:600;">8件</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;"><span style="color:#888;">新宿</span><span style="font-weight:600;">10件</span></div>
+        </div>
+      </div>
+      <div style="padding:12px 12px;">
+        <div style="font-size:10px;font-weight:700;color:#7f77dd;margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em;">LINEweb予約</div>
+        <div style="font-size:28px;font-weight:700;line-height:1;margin-bottom:4px;">30件</div>
+        <div style="font-size:11px;color:#aaa;margin-bottom:8px;">¥97,500</div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="display:flex;justify-content:space-between;font-size:11px;"><span style="color:#888;">トリプルリリース</span><span style="font-weight:600;">25件</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;"><span style="color:#888;">深層睡眠</span><span style="font-weight:600;">5件</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px;">
+      <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;">
+        <span style="color:#888;">4月 合計予約</span><span style="font-weight:700;">48件</span>
+      </div>
+      <div style="background:#f0efe9;border-radius:4px;height:10px;overflow:hidden;display:flex;">
+        <div style="width:37.5%;background:#ef9f27;border-radius:4px 0 0 4px;"></div>
+        <div style="width:62.5%;background:#7f77dd;border-radius:0 4px 4px 0;"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:10px;color:#aaa;margin-top:3px;">
+        <span>HPB 37.5%（18件）</span><span>LINEweb 62.5%（30件）</span>
+      </div>
+    </div>
+  </div>
+  <div class="grid3">
+    <div class="metric">
+      <div class="metric-label">広告費</div>
+      <div class="metric-value">¥88,653</div>
+      <div class="metric-sub">新宿トリプル</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">CPA</div>
+      <div class="metric-value amber">¥3,546</div>
+      <div class="metric-sub">25件合算</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">ROAS（全体）</div>
+      <div class="metric-value green">290%</div>
+      <div class="metric-sub">LTV¥16万含む</div>
+    </div>
+  </div>
+</div>
+
+<!-- 4月 広告売上内訳 -->
+<div class="section">
+  <div class="card">
+    <div class="card-title">4月 広告売上内訳</div>
+    <div class="row-item">
+      <span class="row-label">トリプルリリースヘッドスパ（NEMURY 18件）</span>
+      <span class="row-value">¥70,200</span>
+    </div>
+    <div class="row-item">
+      <span class="row-label">トリプルリリースヘッドスパ（新宿 7件）</span>
+      <span class="row-value">¥27,300</span>
+    </div>
+    <hr class="divider">
+    <div class="row-item">
+      <span class="row-label">広告CV 売上 小計</span>
+      <span class="row-value">¥97,500</span>
+    </div>
+    <div class="row-item">
+      <span class="row-label">LTV 引き上げ契約（1件）</span>
+      <span class="row-value green">¥160,000</span>
+    </div>
+    <hr class="divider">
+    <div class="row-item">
+      <span class="row-label" style="font-weight:700;">広告起点 総売上</span>
+      <span class="row-value green" style="font-size:17px;">¥257,500</span>
+    </div>
+    <div class="row-item">
+      <span class="row-label">ROAS（新宿単体）</span>
+      <span class="row-value red">30.8% <span class="tag tag-red">赤字</span></span>
+    </div>
+    <div class="row-item">
+      <span class="row-label">ROAS（LTV¥16万含む全体）</span>
+      <span class="row-value green">290% <span class="tag tag-green">黒字</span></span>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ===== 3ヶ月推移 ===== -->
+<div class="section" style="padding-top:14px;">
+  <span class="month-badge badge-3month">2〜4月 3ヶ月推移</span>
+</div>
+
+<!-- グラフ① HPB vs LINEweb 2色積み上げ -->
+<div class="section">
+  <div class="card">
+    <div class="card-title">① 月別 予約数 — HPB vs LINEweb</div>
+    <div class="chart-container">
+      <!-- SVG積み上げ棒グラフ: HPB orange / LINEweb purple -->
+      <!-- 2月:HPB21 LINE47=68 / 3月:HPB32 LINE39=71 / 4月:HPB18 LINE30=48 -->
+      <!-- max=71 height=180px scale=180/71=2.535 -->
+      <svg viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+        <!-- Y軸グリッド -->
+        <line x1="40" y1="20" x2="40" y2="185" stroke="#e8e7e2" stroke-width="1"/>
+        <line x1="40" y1="185" x2="320" y2="185" stroke="#e8e7e2" stroke-width="1"/>
+        <!-- グリッドライン -->
+        <line x1="40" y1="110" x2="320" y2="110" stroke="#f0efe9" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="40" y1="47" x2="320" y2="47" stroke="#f0efe9" stroke-width="1" stroke-dasharray="3,3"/>
+        <!-- Y軸ラベル -->
+        <text x="35" y="189" text-anchor="end" font-size="10" fill="#aaa">0</text>
+        <text x="35" y="114" text-anchor="end" font-size="10" fill="#aaa">30</text>
+        <text x="35" y="51"  text-anchor="end" font-size="10" fill="#aaa">60</text>
+
+        <!-- 2月 HPB21(53px) LINE47(119px) -->
+        <!-- bar x=65 width=60 -->
+        <rect x="65"  y="132" width="60" height="53"  rx="3" fill="#ef9f27"/>
+        <rect x="65"  y="13"  width="60" height="119" rx="3" fill="#7f77dd"/>
+        <!-- 数値 -->
+        <text x="95" y="148" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">21</text>
+        <text x="95" y="68"  text-anchor="middle" font-size="10" font-weight="700" fill="#fff">47</text>
+
+        <!-- 3月 HPB32(81px) LINE39(99px) -->
+        <rect x="145" y="104" width="60" height="81"  rx="3" fill="#ef9f27"/>
+        <rect x="145" y="5"   width="60" height="99"  rx="3" fill="#7f77dd"/>
+        <text x="175" y="150" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">32</text>
+        <text x="175" y="58"  text-anchor="middle" font-size="10" font-weight="700" fill="#fff">39</text>
+
+        <!-- 4月 HPB18(46px) LINE30(76px) -->
+        <rect x="225" y="139" width="60" height="46"  rx="3" fill="#ef9f27"/>
+        <rect x="225" y="63"  width="60" height="76"  rx="3" fill="#7f77dd"/>
+        <text x="255" y="167" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">18</text>
+        <text x="255" y="105" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">30</text>
+
+        <!-- X軸ラベル -->
+        <text x="95"  y="200" text-anchor="middle" font-size="12" font-weight="600" fill="#555">2月</text>
+        <text x="175" y="200" text-anchor="middle" font-size="12" font-weight="600" fill="#555">3月</text>
+        <text x="255" y="200" text-anchor="middle" font-size="12" font-weight="600" fill="#555">4月</text>
+        <!-- 合計ラベル -->
+        <text x="95"  y="214" text-anchor="middle" font-size="10" fill="#aaa">計68件</text>
+        <text x="175" y="214" text-anchor="middle" font-size="10" fill="#aaa">計71件</text>
+        <text x="255" y="214" text-anchor="middle" font-size="10" fill="#aaa">計48件</text>
+      </svg>
+    </div>
+    <div class="legend-row">
+      <span><span class="ld" style="background:#ef9f27;"></span>HPB予約</span>
+      <span><span class="ld" style="background:#7f77dd;"></span>LINEweb予約（広告経由）</span>
+    </div>
+  </div>
+</div>
+
+<!-- グラフ①-B 店舗別内訳 -->
+<div class="section">
+  <div class="card">
+    <div class="card-title">① - B 店舗別 予約数内訳</div>
+    <div class="chart-container">
+      <!-- 2月:HPB_N18,HPB_S3,LW_N33,LW_S14=68 / 3月:14,18,30,9=71 / 4月:8,10,23,7=48 -->
+      <!-- max=71 scale=180/71≈2.535 -->
+      <svg viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+        <line x1="40" y1="20" x2="40" y2="185" stroke="#e8e7e2" stroke-width="1"/>
+        <line x1="40" y1="185" x2="320" y2="185" stroke="#e8e7e2" stroke-width="1"/>
+        <line x1="40" y1="110" x2="320" y2="110" stroke="#f0efe9" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="40" y1="47"  x2="320" y2="47"  stroke="#f0efe9" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="35" y="189" text-anchor="end" font-size="10" fill="#aaa">0</text>
+        <text x="35" y="114" text-anchor="end" font-size="10" fill="#aaa">30</text>
+        <text x="35" y="51"  text-anchor="end" font-size="10" fill="#aaa">60</text>
+
+        <!-- 2月: HPB_N18(46) HPB_S3(8) LW_N33(84) LW_S14(35)  total=172 -->
+        <rect x="65"  y="139" width="60" height="46" rx="2" fill="#ef9f27"/>
+        <rect x="65"  y="131" width="60" height="8"  rx="2" fill="#f5c857"/>
+        <rect x="65"  y="47"  width="60" height="84" rx="2" fill="#7f77dd"/>
+        <rect x="65"  y="12"  width="60" height="35" rx="2" fill="#b0aaee"/>
+
+        <!-- 3月: HPB_N14(35) HPB_S18(46) LW_N30(76) LW_N9(23) total=180 -->
+        <rect x="145" y="150" width="60" height="35" rx="2" fill="#ef9f27"/>
+        <rect x="145" y="104" width="60" height="46" rx="2" fill="#f5c857"/>
+        <rect x="145" y="28"  width="60" height="76" rx="2" fill="#7f77dd"/>
+        <rect x="145" y="5"   width="60" height="23" rx="2" fill="#b0aaee"/>
+
+        <!-- 4月: HPB_N8(20) HPB_S10(25) LW_N23(58) LW_S7(18) total=121 -->
+        <rect x="225" y="165" width="60" height="20" rx="2" fill="#ef9f27"/>
+        <rect x="225" y="140" width="60" height="25" rx="2" fill="#f5c857"/>
+        <rect x="225" y="82"  width="60" height="58" rx="2" fill="#7f77dd"/>
+        <rect x="225" y="64"  width="60" height="18" rx="2" fill="#b0aaee"/>
+
+        <text x="95"  y="200" text-anchor="middle" font-size="12" font-weight="600" fill="#555">2月</text>
+        <text x="175" y="200" text-anchor="middle" font-size="12" font-weight="600" fill="#555">3月</text>
+        <text x="255" y="200" text-anchor="middle" font-size="12" font-weight="600" fill="#555">4月</text>
+        <text x="95"  y="214" text-anchor="middle" font-size="10" fill="#aaa">計68件</text>
+        <text x="175" y="214" text-anchor="middle" font-size="10" fill="#aaa">計71件</text>
+        <text x="255" y="214" text-anchor="middle" font-size="10" fill="#aaa">計48件</text>
+      </svg>
+    </div>
+    <div class="legend-row">
+      <span><span class="ld" style="background:#ef9f27;"></span>HPB NEMURY</span>
+      <span><span class="ld" style="background:#f5c857;"></span>HPB 新宿</span>
+      <span><span class="ld" style="background:#7f77dd;"></span>LINEweb NEMURY</span>
+      <span><span class="ld" style="background:#b0aaee;"></span>LINEweb 新宿</span>
+    </div>
+  </div>
+</div>
+
+<!-- グラフ② メニュー別（別カード） -->
+<div class="section">
+  <div class="card">
+    <div class="card-title">② メニュー別 予約数推移（LINEweb広告経由）</div>
+    <div class="chart-container">
+      <!-- トリプル: 34,28,25  深層: 13,11,5  max=47 scale=150/47=3.19 -->
+      <!-- 折れ線グラフ -->
+      <!-- x座標: 2月=95, 3月=175, 4月=255 -->
+      <!-- y=185-(val*3.19) -->
+      <!-- トリプル: 34→76.5→y=108, 28→89.3→y=95, 25→79.8→y=105 -->
+      <!-- トリプル: y= 185-34*3.19=76.5, 185-28*3.19=95.7, 185-25*3.19=105.3 -->
+      <!-- 深層: y= 185-13*3.19=143.5, 185-11*3.19=149.9, 185-5*3.19=169.1 -->
+      <svg viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+        <line x1="40" y1="20" x2="40" y2="185" stroke="#e8e7e2" stroke-width="1"/>
+        <line x1="40" y1="185" x2="320" y2="185" stroke="#e8e7e2" stroke-width="1"/>
+        <line x1="40" y1="121" x2="320" y2="121" stroke="#f0efe9" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="40" y1="57"  x2="320" y2="57"  stroke="#f0efe9" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="35" y="189" text-anchor="end" font-size="10" fill="#aaa">0</text>
+        <text x="35" y="125" text-anchor="end" font-size="10" fill="#aaa">20</text>
+        <text x="35" y="61"  text-anchor="end" font-size="10" fill="#aaa">40</text>
+
+        <!-- トリプルリリース 塗りつぶし -->
+        <polygon points="95,77 175,96 255,106 255,185 175,185 95,185" fill="rgba(127,119,221,0.12)"/>
+        <!-- 深層睡眠 塗りつぶし -->
+        <polygon points="95,144 175,150 255,169 255,185 175,185 95,185" fill="rgba(55,138,221,0.1)"/>
+
+        <!-- トリプルリリース 線 -->
+        <polyline points="95,77 175,96 255,106" fill="none" stroke="#7f77dd" stroke-width="2.5" stroke-linejoin="round"/>
+        <!-- 深層睡眠 線 -->
+        <polyline points="95,144 175,150 255,169" fill="none" stroke="#378add" stroke-width="2.5" stroke-linejoin="round"/>
+
+        <!-- トリプル 点 -->
+        <circle cx="95"  cy="77"  r="5" fill="#7f77dd"/>
+        <circle cx="175" cy="96"  r="5" fill="#7f77dd"/>
+        <circle cx="255" cy="106" r="5" fill="#7f77dd"/>
+        <!-- 深層 点 -->
+        <circle cx="95"  cy="144" r="5" fill="#378add"/>
+        <circle cx="175" cy="150" r="5" fill="#378add"/>
+        <circle cx="255" cy="169" r="5" fill="#378add"/>
+
+        <!-- 数値ラベル: トリプル -->
+        <text x="95"  y="68"  text-anchor="middle" font-size="11" font-weight="700" fill="#7f77dd">34</text>
+        <text x="175" y="87"  text-anchor="middle" font-size="11" font-weight="700" fill="#7f77dd">28</text>
+        <text x="255" y="97"  text-anchor="middle" font-size="11" font-weight="700" fill="#7f77dd">25</text>
+        <!-- 数値ラベル: 深層 -->
+        <text x="95"  y="164" text-anchor="middle" font-size="11" font-weight="700" fill="#378add">13</text>
+        <text x="175" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#378add">11</text>
+        <text x="255" y="185" text-anchor="middle" font-size="11" font-weight="700" fill="#378add">5</text>
+
+        <text x="95"  y="200" text-anchor="middle" font-size="12" font-weight="600" fill="#555">2月</text>
+        <text x="175" y="200" text-anchor="middle" font-size="12" font-weight="600" fill="#555">3月</text>
+        <text x="255" y="200" text-anchor="middle" font-size="12" font-weight="600" fill="#555">4月</text>
+      </svg>
+    </div>
+    <div class="legend-row">
+      <span><span class="ld" style="background:#7f77dd;"></span>トリプルリリースヘッドスパ</span>
+      <span><span class="ld" style="background:#378add;"></span>深層睡眠トリートメント</span>
+    </div>
+  </div>
+</div>
+
+<!-- グラフ③ HPB店舗別 -->
+<div class="section">
+  <div class="card">
+    <div class="card-title">③ HPB予約数 店舗別推移</div>
+    <div class="chart-container">
+      <!-- HPB_N: 18,14,8  HPB_S: 3,18,10  max=32 scale=150/32=4.69 -->
+      <svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
+        <line x1="40" y1="20" x2="40" y2="175" stroke="#e8e7e2" stroke-width="1"/>
+        <line x1="40" y1="175" x2="320" y2="175" stroke="#e8e7e2" stroke-width="1"/>
+        <line x1="40" y1="100" x2="320" y2="100" stroke="#f0efe9" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="35" y="179" text-anchor="end" font-size="10" fill="#aaa">0</text>
+        <text x="35" y="104" text-anchor="end" font-size="10" fill="#aaa">16</text>
+        <text x="35" y="45"  text-anchor="end" font-size="10" fill="#aaa">32</text>
+
+        <!-- 2月 HPB_N18(84) HPB_S3(14) -->
+        <rect x="65"  y="91"  width="30" height="84" rx="3" fill="#ef9f27"/>
+        <rect x="100" y="161" width="30" height="14" rx="3" fill="#f5c857"/>
+        <text x="80"  y="87"  text-anchor="middle" font-size="10" font-weight="700" fill="#ef9f27">18</text>
+        <text x="115" y="157" text-anchor="middle" font-size="10" font-weight="700" fill="#d4a800">3</text>
+
+        <!-- 3月 HPB_N14(66) HPB_S18(84) -->
+        <rect x="150" y="109" width="30" height="66" rx="3" fill="#ef9f27"/>
+        <rect x="185" y="91"  width="30" height="84" rx="3" fill="#f5c857"/>
+        <text x="165" y="105" text-anchor="middle" font-size="10" font-weight="700" fill="#ef9f27">14</text>
+        <text x="200" y="87"  text-anchor="middle" font-size="10" font-weight="700" fill="#d4a800">18</text>
+
+        <!-- 4月 HPB_N8(38) HPB_S10(47) -->
+        <rect x="230" y="137" width="30" height="38" rx="3" fill="#ef9f27"/>
+        <rect x="265" y="128" width="30" height="47" rx="3" fill="#f5c857"/>
+        <text x="245" y="133" text-anchor="middle" font-size="10" font-weight="700" fill="#ef9f27">8</text>
+        <text x="280" y="124" text-anchor="middle" font-size="10" font-weight="700" fill="#d4a800">10</text>
+
+        <!-- X軸 月ラベル -->
+        <text x="97"  y="192" text-anchor="middle" font-size="12" font-weight="600" fill="#555">2月</text>
+        <text x="182" y="192" text-anchor="middle" font-size="12" font-weight="600" fill="#555">3月</text>
+        <text x="262" y="192" text-anchor="middle" font-size="12" font-weight="600" fill="#555">4月</text>
+      </svg>
+    </div>
+    <div class="legend-row">
+      <span><span class="ld" style="background:#ef9f27;"></span>HPB NEMURY</span>
+      <span><span class="ld" style="background:#f5c857;"></span>HPB 新宿</span>
+    </div>
+  </div>
+</div>
+
+<!-- グラフ④ 広告売上 LTV含む -->
+<div class="section">
+  <div class="card">
+    <div class="card-title">④ 月別 広告起点 売上構成（LTV含む）</div>
+    <div class="chart-container">
+      <!-- 2月: トリプル132600 深層59500 合計192100 -->
+      <!-- 3月: トリプル109200 深層48900 合計158100 -->
+      <!-- 4月: トリプル97500 LTV160000 合計257500 -->
+      <!-- max=257500 scale=160/257500=0.000621 height=160 -->
+      <!-- 2月: 132600*0.000621=82.3, 59500*0.000621=36.9 合計=119.2 -->
+      <!-- 3月: 109200*0.000621=67.8, 48900*0.000621=30.4 合計=98.2 -->
+      <!-- 4月: 97500*0.000621=60.5, 160000*0.000621=99.4 合計=159.9 -->
+      <svg viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+        <line x1="40" y1="20" x2="40" y2="185" stroke="#e8e7e2" stroke-width="1"/>
+        <line x1="40" y1="185" x2="320" y2="185" stroke="#e8e7e2" stroke-width="1"/>
+        <line x1="40" y1="105" x2="320" y2="105" stroke="#f0efe9" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="40" y1="25"  x2="320" y2="25"  stroke="#f0efe9" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="35" y="189" text-anchor="end" font-size="9" fill="#aaa">¥0</text>
+        <text x="35" y="109" text-anchor="end" font-size="9" fill="#aaa">13万</text>
+        <text x="35" y="29"  text-anchor="end" font-size="9" fill="#aaa">26万</text>
+
+        <!-- 2月: トリプル h=82 深層 h=37 -->
+        <rect x="65"  y="103" width="60" height="82" rx="3" fill="#7f77dd"/>
+        <rect x="65"  y="66"  width="60" height="37" rx="3" fill="#378add"/>
+        <text x="95" y="148" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">¥13.3万</text>
+        <text x="95" y="89"  text-anchor="middle" font-size="9" font-weight="700" fill="#fff">¥6.0万</text>
+
+        <!-- 3月: トリプル h=68 深層 h=30 -->
+        <rect x="145" y="117" width="60" height="68" rx="3" fill="#7f77dd"/>
+        <rect x="145" y="87"  width="60" height="30" rx="3" fill="#378add"/>
+        <text x="175" y="155" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">¥10.9万</text>
+        <text x="175" y="106" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">¥4.9万</text>
+
+        <!-- 4月: トリプル h=60 LTV h=99 -->
+        <rect x="225" y="125" width="60" height="60" rx="3" fill="#7f77dd"/>
+        <rect x="225" y="26"  width="60" height="99" rx="3" fill="#1d9e75"/>
+        <text x="255" y="159" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">¥9.8万</text>
+        <text x="255" y="80"  text-anchor="middle" font-size="9" font-weight="700" fill="#fff">LTV¥16万</text>
+
+        <text x="95"  y="200" text-anchor="middle" font-size="12" font-weight="600" fill="#555">2月</text>
+        <text x="175" y="200" text-anchor="middle" font-size="12" font-weight="600" fill="#555">3月</text>
+        <text x="255" y="200" text-anchor="middle" font-size="12" font-weight="600" fill="#555">4月</text>
+        <text x="95"  y="214" text-anchor="middle" font-size="10" fill="#aaa">¥19.2万</text>
+        <text x="175" y="214" text-anchor="middle" font-size="10" fill="#aaa">¥15.8万</text>
+        <text x="255" y="214" text-anchor="middle" font-size="10" fill="#aaa">¥25.8万</text>
+      </svg>
+    </div>
+    <div class="legend-row">
+      <span><span class="ld" style="background:#7f77dd;"></span>トリプルリリースヘッドスパ</span>
+      <span><span class="ld" style="background:#378add;"></span>深層睡眠トリートメント</span>
+      <span><span class="ld" style="background:#1d9e75;"></span>LTV（引き上げ契約）</span>
+    </div>
+  </div>
+</div>
+
+<!-- グラフ⑤ トリプルリリース 店舗別 -->
+<div class="section">
+  <div class="card">
+    <div class="card-title">⑤ トリプルリリースヘッドスパ — 店舗別 CV推移</div>
+    <div class="chart-container">
+      <!-- NEMURY: 20,19,18  新宿: 14,9,7  max=20 scale=150/20=7.5 -->
+      <svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
+        <line x1="40" y1="20" x2="40" y2="175" stroke="#e8e7e2" stroke-width="1"/>
+        <line x1="40" y1="175" x2="320" y2="175" stroke="#e8e7e2" stroke-width="1"/>
+        <line x1="40" y1="100" x2="320" y2="100" stroke="#f0efe9" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="40" y1="25"  x2="320" y2="25"  stroke="#f0efe9" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="35" y="179" text-anchor="end" font-size="10" fill="#aaa">0</text>
+        <text x="35" y="104" text-anchor="end" font-size="10" fill="#aaa">10</text>
+        <text x="35" y="29"  text-anchor="end" font-size="10" fill="#aaa">20</text>
+
+        <!-- NEMURY塗り -->
+        <polygon points="95,25 175,32 255,40 255,175 175,175 95,175" fill="rgba(127,119,221,0.12)"/>
+        <!-- 新宿塗り -->
+        <polygon points="95,70 175,107 255,122 255,175 175,175 95,175" fill="rgba(176,170,238,0.1)"/>
+
+        <!-- NEMURY: 20→y=25, 19→y=32, 18→y=40 -->
+        <polyline points="95,25 175,32 255,40" fill="none" stroke="#7f77dd" stroke-width="2.5" stroke-linejoin="round"/>
+        <!-- 新宿: 14→y=70, 9→y=107, 7→y=122 -->
+        <polyline points="95,70 175,107 255,122" fill="none" stroke="#b0aaee" stroke-width="2.5" stroke-linejoin="round"/>
+
+        <circle cx="95"  cy="25"  r="5" fill="#7f77dd"/>
+        <circle cx="175" cy="32"  r="5" fill="#7f77dd"/>
+        <circle cx="255" cy="40"  r="5" fill="#7f77dd"/>
+        <circle cx="95"  cy="70"  r="5" fill="#b0aaee"/>
+        <circle cx="175" cy="107" r="5" fill="#b0aaee"/>
+        <circle cx="255" cy="122" r="5" fill="#b0aaee"/>
+
+        <text x="95"  y="17"  text-anchor="middle" font-size="11" font-weight="700" fill="#7f77dd">20</text>
+        <text x="175" y="24"  text-anchor="middle" font-size="11" font-weight="700" fill="#7f77dd">19</text>
+        <text x="255" y="32"  text-anchor="middle" font-size="11" font-weight="700" fill="#7f77dd">18</text>
+        <text x="95"  y="62"  text-anchor="middle" font-size="11" font-weight="700" fill="#7777aa">14</text>
+        <text x="175" y="99"  text-anchor="middle" font-size="11" font-weight="700" fill="#7777aa">9</text>
+        <text x="255" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#7777aa">7</text>
+
+        <text x="95"  y="192" text-anchor="middle" font-size="12" font-weight="600" fill="#555">2月</text>
+        <text x="175" y="192" text-anchor="middle" font-size="12" font-weight="600" fill="#555">3月</text>
+        <text x="255" y="192" text-anchor="middle" font-size="12" font-weight="600" fill="#555">4月</text>
+      </svg>
+    </div>
+    <div class="legend-row">
+      <span><span class="ld" style="background:#7f77dd;"></span>NEMURY</span>
+      <span><span class="ld" style="background:#b0aaee;"></span>新宿</span>
+    </div>
+  </div>
+</div>
+
+<!-- インサイト -->
+<div class="section">
+  <div class="insight">
+    <div class="insight-title">分析・アクション</div>
+    <div class="insight-item">
+      <div class="dot dot-green"></div>
+      <span>トリプルリリース NEMURYが20→19→18件と安定。広告流入の主軸として機能。</span>
+    </div>
+    <div class="insight-item">
+      <div class="dot dot-amber"></div>
+      <span>新宿トリプルが14→9→7件と漸減。単体ROAS30.8%（広告費割れ）のため、NEMURY誘導率のKPI化が必要。</span>
+    </div>
+    <div class="insight-item">
+      <div class="dot dot-red"></div>
+      <span>深層睡眠トリートメントが13→11→5件と急減。高単価コースへの誘導LP・LINEメッセージの見直しが急務。</span>
+    </div>
+    <div class="insight-item">
+      <div class="dot dot-green"></div>
+      <span>HPB新宿が2月3件→3月18件→4月10件と急成長。新宿ラウンジの認知が拡大している。</span>
+    </div>
+    <div class="insight-item">
+      <div class="dot dot-blue"></div>
+      <span>4月LTV¥160,000達成。LTV含む全体ROAS290%。引き上げの継続が広告費割れの補完となる構造。</span>
+    </div>
+  </div>
+</div>
+
+<div class="footer">NEMURY 広告CV分析 ／ 2026年2〜4月 ／ 作成 2026/4/30</div>
+
+</body>
+</html>
