@@ -1,0 +1,1100 @@
+<!doctype html>
+<!--
+  lp06.html — 腸×脳ディープリカバリー
+  Luxury sleep-tech wellness landing page / mobile first
+
+  画像は既存の lp06-img/ 配下を使用します。
+-->
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>腸×脳ディープリカバリー | NEMURY × 新宿ビューティーラウンジ</title>
+  <meta name="description" content="情報過多でONになり続ける現代女性へ。Grotty PROとWOTTで、腸・脳・頭に着目した深い休息体験を提供するNEMURY × 新宿ビューティーラウンジのリカバリーコンディショニングメニュー。">
+  <meta property="og:title" content="腸×脳ディープリカバリー | NEMURY × 新宿ビューティーラウンジ">
+  <meta property="og:description" content="腸と脳を、静けさへ。深い休息へ切り替えるラグジュアリーウェルネス体験。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nemury.jp/lp06.html">
+  <meta property="og:image" content="https://nemury.jp/lp06-img/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --black:#02050a;
+      --navy:#071426;
+      --deep:#0b1f3a;
+      --blue:#163a64;
+      --silver:#c8cdd6;
+      --mist:#eef1f5;
+      --muted:#9aa8bb;
+      --line:rgba(255,255,255,.15);
+      --glass:rgba(255,255,255,.075);
+      --gold:#c8a96a;
+      --gold2:#e6d29a;
+      --wine:#c01863;
+      --wine2:#e6468a;
+      --cream:#fff4d6;
+      --white:#fff;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--mist);
+      background:
+        radial-gradient(circle at 50% 0%,rgba(22,58,100,.72),transparent 34rem),
+        linear-gradient(180deg,var(--black),#050b14 38%,#02050a);
+      font-family:"Noto Sans JP",system-ui,sans-serif;
+      line-height:1.85;
+      letter-spacing:0;
+    }
+    body::before{
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      content:"";
+      background:
+        radial-gradient(circle at 20% 14%,rgba(200,169,106,.12),transparent 16rem),
+        radial-gradient(circle at 80% 42%,rgba(90,148,214,.16),transparent 18rem),
+        linear-gradient(180deg,rgba(255,255,255,.03),transparent 34%);
+    }
+    body::after{
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      pointer-events:none;
+      content:"";
+      opacity:.45;
+      background-image:
+        radial-gradient(circle,rgba(255,255,255,.55) 0 1px,transparent 1.3px),
+        radial-gradient(circle,rgba(200,169,106,.35) 0 1px,transparent 1.4px);
+      background-size:64px 64px,104px 104px;
+      animation:particles 26s linear infinite;
+    }
+    @keyframes particles{
+      from{transform:translate3d(0,0,0)}
+      to{transform:translate3d(0,-90px,0)}
+    }
+    img{display:block;width:100%}
+    a{color:inherit;text-decoration:none}
+
+    .lp-shell{
+      position:relative;
+      width:min(100%,430px);
+      min-height:100vh;
+      margin:0 auto;
+      overflow:hidden;
+      background:linear-gradient(180deg,rgba(2,5,10,.88),rgba(7,20,38,.94) 42%,rgba(2,5,10,.98));
+      box-shadow:0 0 70px rgba(0,0,0,.48);
+      padding-bottom:86px;
+    }
+    .lp-shell::before{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      content:"";
+      background:
+        repeating-radial-gradient(circle at 50% 12%,rgba(255,255,255,.13) 0 1px,transparent 1px 24px),
+        linear-gradient(180deg,transparent,rgba(255,255,255,.035) 28%,transparent 48%);
+      opacity:.16;
+      animation:ripple 16s ease-in-out infinite alternate;
+    }
+    @keyframes ripple{
+      from{transform:translateY(-20px) scale(1)}
+      to{transform:translateY(18px) scale(1.08)}
+    }
+
+    section{position:relative;z-index:1;padding:78px 24px}
+    .section-dark{background:linear-gradient(180deg,rgba(6,17,32,.5),rgba(2,5,10,.2))}
+    .section-line{border-top:1px solid var(--line)}
+    .eyebrow,.section-kicker{
+      margin:0 0 12px;
+      color:var(--gold2);
+      font-family:"Cormorant Garamond",serif;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    h1,h2,h3{
+      margin:0;
+      font-family:"Noto Serif JP",serif;
+      font-weight:900;
+      letter-spacing:0;
+      line-height:1.35;
+    }
+    h2{font-size:30px}
+    h3{font-size:20px}
+    p{margin:18px 0 0;color:var(--muted);font-size:14px;font-weight:500}
+    .jp-serif{font-family:"Noto Serif JP",serif}
+    .small-note{font-size:11px;color:rgba(238,241,245,.62)}
+
+    .hero{
+      min-height:820px;
+      padding:0;
+      display:flex;
+      align-items:stretch;
+      background:#02050a;
+    }
+    .hero__photo{
+      position:absolute;
+      inset:0;
+    }
+    .hero__photo img{
+      height:100%;
+      object-fit:cover;
+      object-position:50% 32%;
+      filter:saturate(.82) contrast(1.04) brightness(.72);
+    }
+    .hero__photo::after{
+      position:absolute;
+      inset:0;
+      content:"";
+      background:
+        radial-gradient(circle at 48% 50%,rgba(200,169,106,.24),transparent 10rem),
+        linear-gradient(180deg,rgba(2,5,10,.32),rgba(2,5,10,.2) 34%,rgba(2,5,10,.94) 78%,#02050a),
+        linear-gradient(90deg,rgba(2,5,10,.9),rgba(2,5,10,.28) 48%,rgba(2,5,10,.72));
+    }
+    .hero__wave{
+      position:absolute;
+      inset:0;
+      opacity:.55;
+      background:
+        repeating-linear-gradient(105deg,transparent 0 19px,rgba(200,205,214,.09) 20px,transparent 21px),
+        radial-gradient(ellipse at 58% 52%,rgba(230,210,154,.26),transparent 15rem);
+      mix-blend-mode:screen;
+      animation:slowDrift 18s ease-in-out infinite alternate;
+    }
+    @keyframes slowDrift{
+      from{transform:translateX(-10px)}
+      to{transform:translateX(16px)}
+    }
+    .hero__content{
+      position:relative;
+      z-index:1;
+      width:100%;
+      min-height:820px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:30px 24px 38px;
+    }
+    .brand{
+      position:absolute;
+      top:24px;
+      left:24px;
+      right:24px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      color:rgba(255,255,255,.8);
+      font-family:"Cormorant Garamond",serif;
+      font-size:18px;
+      font-weight:700;
+      letter-spacing:.14em;
+    }
+    .brand span:last-child{
+      font-family:"Noto Sans JP",sans-serif;
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.08em;
+      color:rgba(255,255,255,.58);
+    }
+    .hero h1{
+      max-width:8em;
+      color:var(--white);
+      font-size:44px;
+      text-shadow:0 10px 34px rgba(0,0,0,.52);
+    }
+    .hero__lead{
+      max-width:330px;
+      margin-top:18px;
+      color:rgba(255,255,255,.84);
+      font-family:"Noto Serif JP",serif;
+      font-size:17px;
+      font-weight:700;
+      line-height:1.9;
+    }
+    .hero__badge{
+      display:inline-flex;
+      align-items:center;
+      align-self:flex-start;
+      min-height:34px;
+      margin:0 0 14px;
+      padding:6px 13px;
+      border:1px solid rgba(230,210,154,.44);
+      border-radius:999px;
+      color:#071426;
+      background:linear-gradient(135deg,#fff4c4,#c8a96a);
+      box-shadow:0 12px 28px rgba(200,169,106,.28);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.04em;
+    }
+    .hero .hero__menu{
+      max-width:none;
+      color:var(--gold2);
+      font-family:"Noto Serif JP",serif;
+      font-size:21px;
+      font-weight:900;
+      line-height:1.45;
+      text-shadow:0 8px 28px rgba(0,0,0,.62);
+    }
+    .hero .hero__menu strong{
+      display:block;
+      color:#fff;
+      font-family:"Cormorant Garamond",serif;
+      font-size:62px;
+      line-height:.98;
+      letter-spacing:.02em;
+    }
+    .hero__problem-bubbles{
+      position:absolute;
+      top:78px;
+      right:20px;
+      z-index:2;
+      display:grid;
+      gap:9px;
+    }
+    .hero__problem-bubbles span{
+      display:grid;
+      place-items:center;
+      width:68px;
+      height:68px;
+      border:1px solid rgba(230,210,154,.28);
+      border-radius:50%;
+      color:#fff8d6;
+      background:radial-gradient(circle at 35% 28%,rgba(255,255,255,.22),rgba(200,169,106,.16) 42%,rgba(7,20,38,.72));
+      box-shadow:0 0 22px rgba(200,169,106,.18);
+      font-family:"Noto Serif JP",serif;
+      font-size:14px;
+      font-weight:900;
+    }
+    .hero__tech{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:22px 0 0;
+    }
+    .hero__tech span,.glass-pill{
+      display:inline-flex;
+      align-items:center;
+      min-height:32px;
+      padding:6px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:rgba(238,241,245,.82);
+      background:rgba(255,255,255,.07);
+      backdrop-filter:blur(12px);
+      font-size:11px;
+      font-weight:700;
+    }
+    .offer{
+      margin-top:22px;
+      padding:18px;
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:8px;
+      background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.045));
+      backdrop-filter:blur(14px);
+    }
+    .offer p{margin:0}
+    .offer__label{
+      color:var(--gold2);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.08em;
+    }
+    .offer__price{
+      color:#fff7d7;
+      font-family:"Cormorant Garamond",serif;
+      font-size:28px;
+      font-weight:700;
+      line-height:1.1;
+    }
+    .offer__price span{font-size:58px}
+    .offer__note{color:rgba(255,255,255,.68);font-size:12px}
+
+    .primary-cta,.fixed-cta a{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:58px;
+      margin-top:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:999px;
+      color:#06101e;
+      background:linear-gradient(135deg,#f7e7b2,#c8a96a 46%,#92733d);
+      box-shadow:0 18px 38px rgba(200,169,106,.28);
+      font-size:16px;
+      font-weight:900;
+    }
+    .primary-cta::after,.fixed-cta a::after{
+      position:absolute;
+      inset:-20% auto -20% -38%;
+      width:38%;
+      content:"";
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);
+      transform:skewX(-22deg);
+      animation:shine 3.8s ease-in-out infinite;
+    }
+    @keyframes shine{
+      0%,45%{left:-42%}
+      75%,100%{left:110%}
+    }
+
+    .intro{
+      padding-top:72px;
+      text-align:left;
+    }
+    .concept-map{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:9px;
+      margin-top:28px;
+    }
+    .concept-map div{
+      min-height:88px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      border:1px solid var(--line);
+      border-radius:8px;
+      background:var(--glass);
+      backdrop-filter:blur(14px);
+    }
+    .concept-map strong{
+      color:var(--white);
+      font-family:"Cormorant Garamond",serif;
+      font-size:24px;
+      line-height:1;
+    }
+    .concept-map span{
+      margin-top:7px;
+      color:var(--muted);
+      font-size:11px;
+      font-weight:700;
+    }
+
+    .worries ul,.for-list,.benefit-list,.wott-list{
+      display:grid;
+      gap:11px;
+      margin:26px 0 0;
+      padding:0;
+      list-style:none;
+    }
+    .worries li,.for-list li,.wott-list li{
+      position:relative;
+      padding:15px 16px 15px 42px;
+      border:1px solid var(--line);
+      border-radius:8px;
+      color:rgba(238,241,245,.86);
+      background:linear-gradient(135deg,rgba(255,255,255,.09),rgba(255,255,255,.035));
+      backdrop-filter:blur(12px);
+      font-size:14px;
+      font-weight:700;
+    }
+    .worries li::before,.for-list li::before,.wott-list li::before{
+      position:absolute;
+      left:16px;
+      top:21px;
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      content:"";
+      background:var(--gold2);
+      box-shadow:0 0 18px rgba(230,210,154,.72);
+    }
+    .symptom-panel{
+      margin-top:24px;
+      padding:18px 16px;
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:8px;
+      color:#142033;
+      background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(239,243,248,.92));
+      box-shadow:0 22px 48px rgba(0,0,0,.34);
+    }
+    .symptom-panel ul{
+      display:grid;
+      gap:12px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .symptom-panel li{
+      position:relative;
+      padding:0 0 0 30px;
+      color:#1f2a3c;
+      font-size:14px;
+      font-weight:800;
+      line-height:1.75;
+    }
+    .symptom-panel li::before{
+      position:absolute;
+      top:4px;
+      left:0;
+      display:grid;
+      place-items:center;
+      width:18px;
+      height:18px;
+      border:1px solid rgba(20,32,51,.24);
+      border-radius:50%;
+      content:"✓";
+      color:#778395;
+      font-size:12px;
+      font-weight:900;
+    }
+    .cause{
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 78% 4%,rgba(192,24,99,.32),transparent 11rem),
+        radial-gradient(circle at 20% 86%,rgba(230,210,154,.12),transparent 13rem),
+        linear-gradient(180deg,rgba(2,5,10,.38),rgba(7,20,38,.68));
+    }
+    .cause h2 strong{
+      color:#fff2bf;
+      font-size:1.16em;
+    }
+    .cause-ribbon{
+      display:inline-flex;
+      margin:20px 0 0;
+      padding:9px 16px;
+      border-radius:999px;
+      color:#fff;
+      background:linear-gradient(135deg,var(--wine),var(--wine2));
+      box-shadow:0 15px 34px rgba(192,24,99,.32);
+      font-family:"Noto Serif JP",serif;
+      font-size:16px;
+      font-weight:900;
+    }
+    .cause-card{
+      margin-top:22px;
+      padding:22px 18px;
+      border:2px solid rgba(230,210,154,.78);
+      border-radius:8px;
+      color:#2a2130;
+      background:linear-gradient(180deg,#fffaf1,#fff);
+      box-shadow:0 24px 54px rgba(0,0,0,.34);
+    }
+    .cause-card p{
+      margin-top:0;
+      color:#3a2e3b;
+      font-size:14px;
+      font-weight:800;
+      line-height:2;
+    }
+    .cause-card p + p{margin-top:18px}
+    .blood-visual{
+      position:relative;
+      height:150px;
+      margin:18px -12px -12px;
+      overflow:hidden;
+    }
+    .blood-visual span{
+      position:absolute;
+      display:block;
+      border-radius:50%;
+      background:radial-gradient(circle at 30% 28%,#ff9c9c,#d31324 48%,#7e0711);
+      box-shadow:inset -8px -10px 18px rgba(0,0,0,.28),0 12px 28px rgba(173,13,30,.32);
+    }
+    .blood-visual span:nth-child(1){width:72px;height:48px;left:58px;top:36px;transform:rotate(18deg)}
+    .blood-visual span:nth-child(2){width:42px;height:30px;left:28px;top:78px;transform:rotate(-16deg)}
+    .blood-visual span:nth-child(3){width:50px;height:34px;left:150px;top:66px;transform:rotate(12deg)}
+    .blood-visual span:nth-child(4){width:34px;height:24px;left:218px;top:36px;transform:rotate(-24deg)}
+    .campaign-panel{
+      margin-top:26px;
+      padding:22px 18px;
+      border:2px solid rgba(255,255,255,.92);
+      border-radius:8px;
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.96),rgba(255,242,215,.95));
+      color:#142033;
+      text-align:center;
+      box-shadow:0 22px 48px rgba(0,0,0,.28);
+    }
+    .campaign-panel p{margin:0;color:#172237}
+    .campaign-panel__label{
+      display:inline-flex;
+      padding:7px 13px;
+      border-radius:999px;
+      color:#fff;
+      background:linear-gradient(135deg,var(--wine),var(--wine2));
+      font-size:12px;
+      font-weight:900;
+    }
+    .campaign-panel__price{
+      margin-top:10px!important;
+      color:var(--wine);
+      font-family:"Cormorant Garamond",serif;
+      font-size:30px;
+      font-weight:700;
+      line-height:1;
+    }
+    .campaign-panel__price span{font-size:70px}
+
+    .technology{
+      background:linear-gradient(180deg,rgba(11,31,58,.72),rgba(2,5,10,.2));
+    }
+    .tech-card,.voice-card,.faq details,.shop-card,.price-box{
+      border:1px solid var(--line);
+      border-radius:8px;
+      background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.04));
+      backdrop-filter:blur(16px);
+      box-shadow:0 18px 44px rgba(0,0,0,.22);
+    }
+    .tech-card{
+      margin-top:24px;
+      overflow:hidden;
+    }
+    .tech-card img{
+      padding:22px;
+      aspect-ratio:16/10;
+      object-fit:contain;
+      background:radial-gradient(circle at 50% 44%,rgba(255,255,255,.28),rgba(255,255,255,.06) 44%,rgba(0,0,0,.12));
+    }
+    .tech-card__body{padding:20px}
+    .tech-card h3{
+      color:var(--white);
+      font-family:"Cormorant Garamond",serif;
+      font-size:28px;
+      letter-spacing:.02em;
+    }
+    .tech-card h3 span{
+      display:block;
+      margin-top:4px;
+      color:var(--gold2);
+      font-family:"Noto Sans JP",sans-serif;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.12em;
+    }
+
+    .flow{
+      padding-bottom:64px;
+    }
+    .flow-list{
+      margin-top:30px;
+      border-top:1px solid var(--line);
+    }
+    .flow-item{
+      display:grid;
+      grid-template-columns:54px 1fr;
+      gap:16px;
+      padding:22px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .flow-num{
+      color:var(--gold2);
+      font-family:"Cormorant Garamond",serif;
+      font-size:32px;
+      font-weight:700;
+      line-height:1;
+    }
+    .flow-item h3{
+      color:var(--white);
+      font-size:18px;
+    }
+    .flow-item p{margin-top:8px;font-size:13px}
+    .flow-images{
+      margin-top:28px;
+    }
+    .flow-images img{
+      aspect-ratio:16/10;
+      object-fit:cover;
+      object-position:50% 42%;
+      border:1px solid var(--line);
+      border-radius:8px;
+      filter:saturate(.78) brightness(.82);
+    }
+
+    .benefits{
+      background:
+        radial-gradient(circle at 50% 12%,rgba(200,169,106,.14),transparent 14rem),
+        linear-gradient(180deg,rgba(2,5,10,.2),rgba(7,20,38,.64));
+    }
+    .benefit-list{
+      gap:0;
+      border-top:1px solid var(--line);
+    }
+    .benefit-list li{
+      padding:17px 0;
+      border-bottom:1px solid var(--line);
+      color:rgba(238,241,245,.88);
+      font-family:"Noto Serif JP",serif;
+      font-size:16px;
+      font-weight:700;
+    }
+
+    .voice-grid{
+      display:grid;
+      gap:14px;
+      margin-top:28px;
+    }
+    .voice-card{
+      padding:20px;
+    }
+    .voice-card p{
+      margin:0;
+      color:rgba(238,241,245,.84);
+      font-family:"Noto Serif JP",serif;
+      font-size:15px;
+    }
+    .voice-card span{
+      display:block;
+      margin-top:14px;
+      color:var(--gold2);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.08em;
+    }
+
+    .faq details{
+      margin-top:12px;
+      padding:0 18px;
+    }
+    .faq summary{
+      cursor:pointer;
+      padding:18px 0;
+      color:var(--white);
+      font-weight:900;
+      list-style:none;
+    }
+    .faq summary::-webkit-details-marker{display:none}
+    .faq details p{
+      margin:0;
+      padding:0 0 18px;
+      font-size:13px;
+    }
+
+    .price{
+      text-align:center;
+      background:radial-gradient(circle at 50% 22%,rgba(230,210,154,.15),transparent 15rem);
+    }
+    .price-box{
+      margin:26px 0 0;
+      padding:24px 18px;
+    }
+    .price-box p{margin:0}
+    .price-box__name{color:var(--white);font-weight:900}
+    .price-box__time{color:var(--muted);font-size:13px}
+    .price-box__normal{
+      margin-top:12px!important;
+      color:rgba(238,241,245,.48);
+      font-size:12px;
+      text-decoration:line-through;
+    }
+    .price-box__trial{
+      color:#fff4c4;
+      font-family:"Cormorant Garamond",serif;
+      font-size:30px;
+      font-weight:700;
+      line-height:1.05;
+    }
+    .price-box__trial span{font-size:68px}
+
+    .reserve{
+      padding-bottom:58px;
+    }
+    .shop-card{
+      margin-top:18px;
+      overflow:hidden;
+    }
+    .shop-card img{
+      aspect-ratio:16/9;
+      object-fit:cover;
+      filter:saturate(.72) brightness(.78);
+    }
+    .shop-card__body{padding:18px}
+    .shop-card h3{color:var(--white);font-size:21px}
+    .shop-card p{margin-top:6px;font-size:13px}
+    .shop-card__actions{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      margin-top:16px;
+    }
+    .shop-card__actions a{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:rgba(238,241,245,.86);
+      font-size:13px;
+      font-weight:900;
+    }
+    .shop-card__main{
+      color:#06101e!important;
+      background:linear-gradient(135deg,#f7e7b2,#c8a96a 46%,#92733d);
+      border-color:rgba(255,255,255,.16)!important;
+    }
+
+    .footer{
+      position:relative;
+      z-index:1;
+      padding:38px 24px 42px;
+      border-top:1px solid var(--line);
+      color:rgba(238,241,245,.56);
+      text-align:center;
+    }
+    .footer__brand{
+      color:var(--white);
+      font-family:"Cormorant Garamond",serif;
+      font-size:24px;
+      font-weight:700;
+      letter-spacing:.14em;
+    }
+    .footer p{
+      margin-top:10px;
+      font-size:11px;
+      line-height:1.8;
+    }
+
+    .fixed-cta{
+      position:fixed;
+      z-index:10;
+      right:0;
+      bottom:0;
+      left:0;
+      width:min(100%,430px);
+      margin:0 auto;
+      padding:10px 16px 14px;
+      background:linear-gradient(180deg,rgba(2,5,10,0),rgba(2,5,10,.92) 28%,rgba(2,5,10,.98));
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(100%);
+      transition:opacity .28s ease,transform .28s ease;
+    }
+    .fixed-cta.is-visible{
+      opacity:1;
+      pointer-events:auto;
+      transform:translateY(0);
+    }
+    .fixed-cta a{min-height:52px;margin-top:0;font-size:15px}
+
+    .reveal{
+      opacity:0;
+      transform:translateY(22px);
+      transition:opacity .8s ease,transform .8s ease;
+    }
+    .reveal.is-visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media(max-width:360px){
+      section{padding-right:20px;padding-left:20px}
+      .hero h1{font-size:39px}
+      h2{font-size:27px}
+      .concept-map{gap:7px}
+      .offer__price span,.price-box__trial span{font-size:58px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation:none!important;transition:none!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+<body>
+  <main class="lp-shell">
+
+    <section class="hero">
+      <div class="hero__photo">
+        <img src="lp06-img/hero.jpg" alt="NEMURYの内装空間">
+      </div>
+      <div class="hero__wave"></div>
+      <div class="hero__problem-bubbles" aria-label="ケア領域">
+        <span>腸活</span>
+        <span>温活</span>
+        <span>睡眠</span>
+      </div>
+      <div class="hero__content">
+        <div class="brand">
+          <span>NEMURY</span>
+          <span>with Shinjuku Beauty Lounge</span>
+        </div>
+        <div class="hero__badge">モニター募集中</div>
+        <p class="eyebrow">Gut × Brain × Sleep</p>
+        <h1 class="hero__menu">NEMURY × 新宿ビューティーラウンジ
+          <strong>腸 × 脳</strong>
+          DEEP リカバリー
+        </h1>
+        <p class="hero__lead">眠れない現代人のための、腸・ヘッド・フェイシャルを組み合わせた全身リカバリーmenu。</p>
+        <div class="hero__tech">
+          <span>Grotty PRO</span>
+          <span>WOTT</span>
+          <span>血流測定</span>
+          <span>完全予約制</span>
+        </div>
+        <div class="offer">
+          <p class="offer__label">特別価格モニター募集</p>
+          <p class="offer__price"><span>6,600</span>円</p>
+          <p class="offer__note">初回体験 約90分 / 通常 15,000円(税込)</p>
+        </div>
+        <a class="primary-cta" href="#trouble">まずは疲労サインを確認する</a>
+        <p class="small-note">初回カウンセリング付き / プライベート空間</p>
+      </div>
+    </section>
+
+    <section id="concept" class="intro reveal">
+      <p class="section-kicker">Supervised by Esthe Pro Labo</p>
+      <h2>腸×脳<br>ディープリカバリー</h2>
+      <p>近赤外線テクノロジーを活用した腸・ヘッド・フェイシャルケア。全身トリートメントとスリープテックを組み合わせた、独自メソッドのリカバリーメニューです。</p>
+      <div class="concept-map">
+        <div><strong>Gut</strong><span>腸まわり</span></div>
+        <div><strong>Brain</strong><span>ヘッド</span></div>
+        <div><strong>Sleep</strong><span>休息環境</span></div>
+      </div>
+    </section>
+
+    <section id="trouble" class="worries section-dark section-line reveal">
+      <p class="section-kicker">Recovery Sign</p>
+      <h2>こんな疲労サイン、<br>感じていませんか？</h2>
+      <p>頭を使い続ける毎日、冷えや巡りの滞り、目元・首肩のこわばり。腸・脳・頭をまとめて整えることで、休息へ切り替わりやすい身体状態を目指します。</p>
+      <div class="symptom-panel">
+        <ul>
+          <li>PC・スマホ時間が長く、目元や頭が重く感じる</li>
+          <li>首肩のこりや食いしばりで、力が抜けにくい</li>
+          <li>お腹まわりの冷え感や重さが気になる</li>
+          <li>考えごとが多く、休んでも頭がすっきりしない</li>
+          <li>朝起きても身体が重く、疲れが残りやすい</li>
+          <li>睡眠・腸活・温活をまとめてケアしたい</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="cause" class="cause section-line reveal">
+      <p class="section-kicker">Circulation × Brain Fatigue</p>
+      <h2>その脳疲労は、<br><strong>全身の巡り不足</strong></h2>
+      <div class="cause-ribbon">睡眠にも、腸活。</div>
+      <div class="cause-card">
+        <p>私たちの身体は、全身をめぐる流れによって酸素や栄養をすみずみまで届けています。しかし、ストレスや緊張状態が続くことで、身体が常に力んだ状態になり、深くリラックスしづらくなることも。</p>
+        <p>脳は多くのエネルギーを使っています。頭や肩、目元の緊張が続くと、身体まで休息状態へ切り替わりづらくなります。NEMURY × 新宿ビューティーラウンジでは腸まわり・頭部・フェイシャルへ丁寧にアプローチし、巡りと休息の土台を整えます。</p>
+        <div class="blood-visual" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="technology" class="technology section-line reveal">
+      <p class="section-kicker">Technology For Deep Rest</p>
+      <h2>巡りと眠りを設計する、<br>2つのテクノロジー。</h2>
+      <article class="tech-card">
+        <img src="lp06-img/grotty-pro.png" alt="近赤外線美容機器 Grotty PRO">
+        <div class="tech-card__body">
+          <h3>Grotty PRO<span>近赤外線美容機器</span></h3>
+          <p>全身・腸まわり・ヘッド・フェイシャルへ、あたたかく心地よいトリートメントを。巡りに着目しながら、深い休息へ向かう身体感覚をサポートします。</p>
+        </div>
+      </article>
+      <article class="tech-card">
+        <img src="lp06-img/wott.png" alt="スリープテックデバイス WOTT">
+        <div class="tech-card__body">
+          <h3>WOTT<span>Sleep Tech Device</span></h3>
+          <p>眠りに入る前の空間を、より静かに、より心地よく。リラックスしやすい環境を演出し、OFFモードへの切り替えをサポートします。</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="flow" class="flow section-line reveal">
+      <p class="section-kicker">Deep Recovery Flow</p>
+      <h2>リカバリー<br>コンディショニング</h2>
+      <div class="flow-list">
+        <div class="flow-item">
+          <span class="flow-num">01</span>
+          <div>
+            <h3>カウンセリング</h3>
+            <p>今の疲労感、睡眠リズム、生活習慣を確認します。</p>
+          </div>
+        </div>
+        <div class="flow-item">
+          <span class="flow-num">02</span>
+          <div>
+            <h3>血流測定</h3>
+            <p>施術前の状態を見える化し、リカバリーの目的を共有します。</p>
+          </div>
+        </div>
+        <div class="flow-item">
+          <span class="flow-num">03</span>
+          <div>
+            <h3>腸・全身トリートメント</h3>
+            <p>Grotty PROを使用し、腹部・背面・全身の巡りに着目します。</p>
+          </div>
+        </div>
+        <div class="flow-item">
+          <span class="flow-num">04</span>
+          <div>
+            <h3>脳疲労リカバリー</h3>
+            <p>情報過多で張りつめやすい脳疲労感へ、ゆっくり休息モードへ切り替える時間をつくります。</p>
+          </div>
+        </div>
+        <div class="flow-item">
+          <span class="flow-num">05</span>
+          <div>
+            <h3>頭部・ヘッドリカバリー</h3>
+            <p>頭部、首肩、目元まわりを丁寧にゆるめ、思考の緊張をほどきます。</p>
+          </div>
+        </div>
+        <div class="flow-item">
+          <span class="flow-num">06</span>
+          <div>
+            <h3>フェイシャル＆WOTT</h3>
+            <p>顔まわりのケアとスリープセッションで、余韻まで静かに整えます。</p>
+          </div>
+        </div>
+      </div>
+      <div class="flow-images">
+        <img src="lp06-img/model-grotty-head.jpg" alt="Grotty PROを使った頭部リカバリー">
+      </div>
+    </section>
+
+    <section id="benefits" class="benefits section-line reveal">
+      <p class="section-kicker">Benefits</p>
+      <h2>目指すのは、<br>眠れる身体の土台づくり。</h2>
+      <ul class="benefit-list">
+        <li>頭の中のノイズを静めるリカバリー時間</li>
+        <li>お腹まわりから温まるような安心感</li>
+        <li>睡眠の質に向き合うための状態チェック</li>
+        <li>巡りに着目したボディコンディショニング</li>
+        <li>肌印象まで澄ませるフェイシャルケア</li>
+        <li>忙しさから切り離される完全予約制の静寂</li>
+      </ul>
+      <p>身体を預けた瞬間から、思考が少しずつ、静かな場所へ戻っていく。</p>
+    </section>
+
+    <section id="for-you" class="for-you section-line reveal">
+      <p class="section-kicker">For You</p>
+      <h2>こんな方に、<br>ディープリカバリー。</h2>
+      <ul class="for-list">
+        <li>睡眠の悩みと身体の冷え感を同時にケアしたい</li>
+        <li>PC・スマホ時間が長く、頭や目元が重く感じる</li>
+        <li>腸活・温活・睡眠ケアをまとめて受けたい</li>
+        <li>美容もリカバリーも妥協したくない</li>
+        <li>施術前後の変化を測定しながら確認したい</li>
+      </ul>
+      <a class="primary-cta" href="#price">初回体験の内容を見る</a>
+    </section>
+
+    <section id="voice" class="voice section-line reveal">
+      <p class="section-kicker">Voice</p>
+      <h2>体験後に残るのは、<br>静かな余韻。</h2>
+      <div class="voice-grid">
+        <article class="voice-card">
+          <p>「頭の中が静かになる感覚がありました。施術後は、スマホを見るより余韻を感じていたくなりました。」</p>
+          <span>30代 / 経営者</span>
+        </article>
+        <article class="voice-card">
+          <p>「美容サロンというより、静かなラボのような体験。忙しい時期ほど予約したくなります。」</p>
+          <span>40代 / 会社役員</span>
+        </article>
+        <article class="voice-card">
+          <p>「お腹からゆるんで、呼吸が深くなるような時間でした。終わったあと、顔まわりの印象まで軽やかに感じました。」</p>
+          <span>30代 / フリーランス</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="faq" class="faq section-line reveal">
+      <p class="section-kicker">FAQ</p>
+      <h2>よくあるご質問</h2>
+      <details>
+        <summary>初めてでも受けられますか？</summary>
+        <p>はい。初回はカウンセリングで状態やお悩みを確認し、無理のない内容でご案内します。</p>
+      </details>
+      <details>
+        <summary>どんな服装で行けばよいですか？</summary>
+        <p>リラックスしやすい服装でお越しください。必要に応じてお着替えをご用意します。</p>
+      </details>
+      <details>
+        <summary>メイクをしたままでも大丈夫ですか？</summary>
+        <p>フェイシャルを含む場合は、内容に応じてご案内します。</p>
+      </details>
+      <details>
+        <summary>予約はどこからできますか？</summary>
+        <p>LINEより空き枠の確認と初回体験予約が可能です。</p>
+      </details>
+      <p class="small-note">本メニューはリラクゼーション・美容・ウェルネスを目的としたコンディショニングです。</p>
+    </section>
+
+    <section id="price" class="price section-line reveal">
+      <p class="section-kicker">First Trial</p>
+      <h2>全身の「巡り」を<br>ととのえる初回体験。</h2>
+      <p>初回体験の空き枠は、次の店舗選択からご確認いただけます。ご希望の店舗を選び、LINE予約へお進みください。</p>
+      <div class="campaign-panel">
+        <p class="campaign-panel__label">Instagram限定 先着30名様</p>
+        <p class="price-box__name">NEMURY × 新宿ビューティーラウンジ<br>腸×脳ディープリカバリー</p>
+        <p class="price-box__time">初回体験 約90分 / 血流測定付き</p>
+        <p class="price-box__normal">通常価格 15,000円(税込)</p>
+        <p class="campaign-panel__price"><span>6,600</span>円</p>
+        <p class="small-note">ご来店者様特典：ネムリラックスドリンク1本プレゼント</p>
+      </div>
+      <a class="primary-cta" href="#reserve">予約する店舗を選ぶ</a>
+    </section>
+
+    <section id="reserve" class="reserve section-line reveal">
+      <p class="section-kicker">Reserve</p>
+      <h2>完全予約制の<br>静かなリカバリー空間へ。</h2>
+      <p>ご希望の店舗を選択すると、各店舗のLINE予約画面へ進みます。</p>
+
+      <article class="shop-card">
+        <img src="lp06-img/shop-nemury.jpg" alt="NEMURY 店内">
+        <div class="shop-card__body">
+          <h3>NEMURY</h3>
+          <p>東京都港区麻布十番2-3-9<br>コアラビル麻布十番4階<br>（THE PROLABO SAUNAと同ビル4階）</p>
+          <div class="shop-card__actions">
+            <a class="shop-card__main" href="https://liff.line.me/2001118686-9oAkbn8M/reservations/create?shopId=9e58fb9c-e89b-4c04-90ea-393cfd2acd50&menuId=RSV0033&selectedMenuId=RSV0033">NEMURYで予約する</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="shop-card">
+        <img src="lp06-img/shop-shinjuku-lounge.png" alt="新宿ビューティーラウンジ 店内">
+        <div class="shop-card__body">
+          <h3>新宿ビューティーラウンジ</h3>
+          <p>東京都新宿区新宿3-1-22<br>ADビル1階<br>（Esthe Pro Labo新宿店の奥）</p>
+          <div class="shop-card__actions">
+            <a class="shop-card__main" href="https://liff.line.me/2001118686-9oAkbn8M/reservations/create?shopId=9e4aeda4-bbf7-4754-8c3e-aab9eeffd35c&menuId=RSV0034&selectedMenuId=RSV0034">新宿店で予約する</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__brand">NEMURY</div>
+      <p>NEMURY × 新宿ビューティーラウンジ<br>腸×脳ディープリカバリー</p>
+      <p>Noise off. Deep rest on.</p>
+    </footer>
+  </main>
+
+  <div class="fixed-cta">
+    <a href="#reserve">店舗を選んで予約する</a>
+  </div>
+
+  <script>
+    const fixedCta = document.querySelector(".fixed-cta");
+    const hero = document.querySelector(".hero");
+    const revealTargets = document.querySelectorAll(".reveal");
+
+    const toggleFixedCta = () => {
+      fixedCta.classList.toggle("is-visible", window.scrollY > hero.offsetHeight * 0.62);
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("is-visible");
+      });
+    }, {threshold: .14});
+
+    revealTargets.forEach((target) => revealObserver.observe(target));
+    toggleFixedCta();
+    window.addEventListener("scroll", toggleFixedCta, {passive:true});
+  </script>
+</body>
+</html>
