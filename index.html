@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEMURY 広告CV分析 2〜6月</title>
+<title>NEMURY 広告CV分析 3〜7月</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif; background: #f5f4f0; color: #1a1a18; font-size: 14px; max-width: 480px; margin: 0 auto; }
@@ -15,7 +15,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Goth
 .badge-jun    { background: #0f766e; color: #fff; }
 .badge-3month { background: #f0efe9; color: #5f5e5a; }
 .section { padding: 12px 12px 0; }
-.tab-nav { position:sticky; top:0; z-index:5; display:grid; grid-template-columns:1fr 1fr 1.35fr; gap:6px; padding:8px 12px; background:rgba(245,244,240,.96); backdrop-filter:blur(8px); border-bottom:0.5px solid #e5e2dc; }
+.tab-nav { position:sticky; top:0; z-index:5; display:grid; grid-template-columns:repeat(auto-fit,minmax(86px,1fr)); gap:6px; padding:8px 12px; background:rgba(245,244,240,.96); backdrop-filter:blur(8px); border-bottom:0.5px solid #e5e2dc; }
 .tab-nav a { display:flex; align-items:center; justify-content:center; min-height:34px; padding:6px 8px; border-radius:8px; background:#fff; color:#555; font-size:11px; font-weight:700; text-decoration:none; text-align:center; line-height:1.25; box-shadow:0 1px 0 rgba(0,0,0,.03); }
 .tab-nav a.active { background:#1a1a18; color:#fff; }
 .section-label { font-size: 10px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
@@ -86,20 +86,153 @@ svg { width:100%; display:block; }
 <div class="header">
   <div class="header-title">NEMURY 広告CV分析</div>
   <div class="header-sub">
-    2026年2〜6月 ／ LINEweb予約（広告経由）＋ HPB予約<br>
-    店舗別 × メニュー別集計 ／ 6月 HPB・LINE予約追加
+    2026年3〜7月 ／ LINEweb予約（広告経由）＋ HPB予約<br>
+    腸脳ディープリカバリー 6月・7月実績追加
   </div>
 </div>
 
 <nav class="tab-nav" aria-label="レポート内ナビゲーション">
-  <a class="active" href="#june">6月・7月方針</a>
+  <a class="active" href="#summary">3〜7月サマリー</a>
+  <a href="#july">7月実績</a>
+  <a href="#june">6月実績</a>
   <a href="#april">4月実績</a>
-  <a href="#trend">2〜4月推移</a>
+  <a href="#trend">3〜7月推移</a>
 </nav>
+
+<!-- ===== 3〜7月 サマリー ===== -->
+<div id="summary" class="section" style="padding-top:16px;">
+  <span class="month-badge badge-3month">2026年3〜7月 サマリー</span>
+</div>
+
+<div class="section">
+  <div class="grid3">
+    <div class="metric">
+      <div class="metric-label">7月 腸脳予約</div>
+      <div class="metric-value amber">10件</div>
+      <div class="metric-sub">単価¥5,500</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">7月 予約売上</div>
+      <div class="metric-value green" style="font-size:18px;">¥55,000</div>
+      <div class="metric-sub">10件 × ¥5,500</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">7月 LTV込み売上</div>
+      <div class="metric-value green" style="font-size:18px;">¥203,000</div>
+      <div class="metric-sub">契約LTV ¥148,000含む</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">3〜7月 実績サマリー</div>
+    <table class="trend-table">
+      <thead>
+        <tr>
+          <th>月</th>
+          <th>主指標</th>
+          <th>売上</th>
+          <th>LTV</th>
+          <th>補足</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>3月</td>
+          <td><strong>39件</strong></td>
+          <td>¥158,100</td>
+          <td>-</td>
+          <td>ROAS150.6%</td>
+        </tr>
+        <tr>
+          <td>4月</td>
+          <td><strong>25件</strong></td>
+          <td>¥97,500</td>
+          <td>¥160,000</td>
+          <td>LTV込み¥257,500</td>
+        </tr>
+        <tr>
+          <td>5月</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>未入力</td>
+        </tr>
+        <tr>
+          <td>6月</td>
+          <td><strong>7件</strong></td>
+          <td>¥46,200</td>
+          <td>¥160,000</td>
+          <td>腸脳 / 別枠LTV</td>
+        </tr>
+        <tr style="background:#f4fbf7;">
+          <td style="font-weight:700;color:#1d9e75;">7月</td>
+          <td><strong>10件</strong></td>
+          <td>¥55,000</td>
+          <td>¥148,000</td>
+          <td style="font-weight:700;color:#1d9e75;">契約あり / LTV込み¥203,000</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note-box">
+      7月の広告費は未入力のため、CPA・ROASは広告費確定後に算出。7月は腸脳ディープリカバリー10件、オファー売上¥55,000、契約LTV¥148,000を加味した売上は¥203,000。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 7月 ===== -->
+<div id="july" class="section" style="padding-top:16px;">
+  <span class="month-badge badge-jun">2026年7月 実績</span>
+</div>
+
+<div class="section">
+  <div class="card">
+    <div class="card-title">7月 腸脳ディープリカバリー広告 実績</div>
+    <div class="grid3">
+      <div class="metric">
+        <div class="metric-label">予約数</div>
+        <div class="metric-value amber">10件</div>
+        <div class="metric-sub">腸脳ディープリカバリー</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">単価</div>
+        <div class="metric-value">¥5,500</div>
+        <div class="metric-sub">7月オファー単価</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">予約売上</div>
+        <div class="metric-value green">¥55,000</div>
+        <div class="metric-sub">10件 × ¥5,500</div>
+      </div>
+    </div>
+    <div class="grid3">
+      <div class="metric">
+        <div class="metric-label">契約LTV</div>
+        <div class="metric-value green">¥148,000</div>
+        <div class="metric-sub">契約あり</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">LTV込み売上</div>
+        <div class="metric-value green">¥203,000</div>
+        <div class="metric-sub">¥55,000 + ¥148,000</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">CPA / ROAS</div>
+        <div class="metric-value amber" style="font-size:18px;">未算出</div>
+        <div class="metric-sub">広告費入力後に算出</div>
+      </div>
+    </div>
+    <div class="target-row" style="margin-top:10px;">
+      <div class="target-label">腸脳ディープリカバリーLP<br><span style="font-size:10px;color:#aaa;">深層睡眠美容サロンNEMURY｜Esthe Pro Labo</span></div>
+      <a class="target-value green" href="https://nemury.jp/lp05.html" target="_blank" rel="noopener">lp05.html</a>
+    </div>
+    <div class="note-box">
+      7月は腸脳ディープリカバリーで10件予約、単価¥5,500。契約発生によりLTV¥148,000を計上し、予約売上と合わせた参考売上は¥203,000。
+    </div>
+  </div>
+</div>
 
 <!-- ===== 6月 ===== -->
 <div id="june" class="section" style="padding-top:16px;">
-  <span class="month-badge badge-jun">2026年6月 実績・7月進捗方針</span>
+  <span class="month-badge badge-jun">2026年6月 実績</span>
 </div>
 
 <div class="section">
@@ -208,7 +341,7 @@ svg { width:100%; display:block; }
 
 <div class="section">
   <div class="insight">
-    <div class="insight-title">7月 進捗方針</div>
+    <div class="insight-title">7月 進捗方針（6月時点）</div>
     <div class="insight-item">
       <div class="dot dot-green"></div>
       <span>6月広告実績はCPA¥16,571。7月はCPA¥6,600以内を目安に、広告予約数と契約化率をセットで管理。</span>
@@ -330,32 +463,32 @@ svg { width:100%; display:block; }
 
 <div class="sep"></div>
 
-<!-- ===== 3ヶ月推移 ===== -->
+<!-- ===== 3〜7月推移 ===== -->
 <div id="trend" class="section" style="padding-top:14px;">
-  <span class="month-badge badge-3month">2〜4月 3ヶ月推移</span>
+  <span class="month-badge badge-3month">3〜7月 推移サマリー</span>
 </div>
 
-<!-- 3ヶ月サマリー -->
+<!-- 3〜7月サマリー -->
 <div class="section">
   <div class="grid3">
     <div class="metric">
-      <div class="metric-label">Meta広告経由 予約数</div>
-      <div class="metric-value">107件</div>
-      <div class="metric-sub">43 → 39 → 25</div>
+      <div class="metric-label">7月 腸脳予約</div>
+      <div class="metric-value amber">10件</div>
+      <div class="metric-sub">6月7件 → 7月10件</div>
     </div>
     <div class="metric">
-      <div class="metric-label">3ヶ月 広告費</div>
-      <div class="metric-value purple" style="font-size:18px;">¥34.2万</div>
-      <div class="metric-sub">Meta広告</div>
+      <div class="metric-label">7月 LTV込み売上</div>
+      <div class="metric-value green" style="font-size:18px;">¥20.3万</div>
+      <div class="metric-sub">予約売上 + 契約LTV</div>
     </div>
     <div class="metric">
-      <div class="metric-label">広告起点売上</div>
-      <div class="metric-value green" style="font-size:18px;">¥60.8万</div>
-      <div class="metric-sub">LTV¥16万含む</div>
+      <div class="metric-label">表示期間</div>
+      <div class="metric-value purple" style="font-size:18px;">3〜7月</div>
+      <div class="metric-sub">5月は未入力</div>
     </div>
   </div>
   <div class="card">
-    <div class="card-title">Meta広告経由 予約数・CPA・ROASサマリー</div>
+    <div class="card-title">3〜7月 予約・売上・LTVサマリー</div>
     <table class="trend-table">
       <thead>
         <tr>
@@ -369,14 +502,6 @@ svg { width:100%; display:block; }
       </thead>
       <tbody>
         <tr>
-          <td>2月</td>
-          <td><strong>43件</strong></td>
-          <td>¥148,000</td>
-          <td>¥192,100</td>
-          <td style="font-weight:700;color:#ba7517;">¥3,442</td>
-          <td style="font-weight:700;color:#1d9e75;">129.8%</td>
-        </tr>
-        <tr>
           <td>3月</td>
           <td><strong>39件</strong></td>
           <td>¥104,958</td>
@@ -384,39 +509,55 @@ svg { width:100%; display:block; }
           <td style="font-weight:700;color:#1d9e75;">¥2,691</td>
           <td style="font-weight:700;color:#1d9e75;">150.6%</td>
         </tr>
-        <tr style="background:#f4fbf7;">
-          <td style="font-weight:700;color:#1d9e75;">4月</td>
+        <tr>
+          <td>4月</td>
           <td><strong>25件</strong></td>
           <td>¥88,653</td>
           <td>¥257,500</td>
           <td style="font-weight:700;color:#ba7517;">¥3,546</td>
           <td style="font-weight:700;color:#1d9e75;">290.5%</td>
         </tr>
-        <tr style="background:#fafaf7;">
-          <td style="font-weight:700;">3ヶ月計</td>
-          <td><strong>107件</strong></td>
-          <td>¥341,611</td>
-          <td>¥607,700</td>
-          <td style="font-weight:700;color:#ba7517;">¥3,193</td>
-          <td style="font-weight:700;color:#1d9e75;">177.9%</td>
+        <tr>
+          <td>5月</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>未入力</td>
+        </tr>
+        <tr>
+          <td>6月</td>
+          <td><strong>7件</strong></td>
+          <td>¥116,000</td>
+          <td>¥46,200</td>
+          <td style="font-weight:700;color:#e24b4a;">¥16,571</td>
+          <td style="font-weight:700;color:#e24b4a;">39.8%</td>
+        </tr>
+        <tr style="background:#f4fbf7;">
+          <td style="font-weight:700;color:#1d9e75;">7月</td>
+          <td><strong>10件</strong></td>
+          <td>未入力</td>
+          <td>¥203,000</td>
+          <td>未算出</td>
+          <td>広告費待ち</td>
         </tr>
       </tbody>
     </table>
     <div class="note-box">
-      CPAはMeta広告経由予約数（2月43件・3月39件・4月25件）で算出。ROASは広告起点売上 ÷ 広告費で、4月のみLTV¥160,000を含む。
+      3〜7月のサマリー。5月と7月広告費は未入力。7月は腸脳ディープリカバリー10件、単価¥5,500、契約LTV¥148,000を含む参考売上¥203,000。
     </div>
     <div class="mini-grid">
       <div class="mini-card">
         <div class="mini-month">予約ピーク</div>
-        <div class="mini-val green">2月 43件</div>
+        <div class="mini-val green">7月 10件</div>
       </div>
       <div class="mini-card">
-        <div class="mini-month">4月 前月比</div>
-        <div class="mini-val red">-14件</div>
+        <div class="mini-month">7月 LTV</div>
+        <div class="mini-val red">¥14.8万</div>
       </div>
       <div class="mini-card">
-        <div class="mini-month">3ヶ月平均</div>
-        <div class="mini-val">35.7件</div>
+        <div class="mini-month">7月売上</div>
+        <div class="mini-val">¥20.3万</div>
       </div>
     </div>
   </div>
@@ -425,7 +566,7 @@ svg { width:100%; display:block; }
 <!-- グラフ① HPB vs LINEweb 2色積み上げ -->
 <div class="section">
   <div class="card">
-    <div class="card-title">① 月別 予約数 — HPB vs LINEweb</div>
+    <div class="card-title">参考① 月別 予約数 — HPB vs LINEweb（2〜4月）</div>
     <div class="chart-container">
       <!-- SVG積み上げ棒グラフ: HPB orange / LINEweb purple -->
       <!-- 2月:HPB21 LINE47=68 / 3月:HPB32 LINE39=71 / 4月:HPB18 LINE30=48 -->
@@ -482,7 +623,7 @@ svg { width:100%; display:block; }
 <!-- グラフ①-B 店舗別内訳 -->
 <div class="section">
   <div class="card">
-    <div class="card-title">① - B 店舗別 予約数内訳</div>
+    <div class="card-title">参考① - B 店舗別 予約数内訳（2〜4月）</div>
     <div class="chart-container">
       <!-- 2月:HPB_N18,HPB_S3,LW_N33,LW_S14=68 / 3月:14,18,30,9=71 / 4月:8,10,23,7=48 -->
       <!-- max=71 scale=180/71≈2.535 -->
@@ -533,7 +674,7 @@ svg { width:100%; display:block; }
 <!-- グラフ② メニュー別（別カード） -->
 <div class="section">
   <div class="card">
-    <div class="card-title">② メニュー別 予約数推移（LINEweb広告経由）</div>
+    <div class="card-title">参考② メニュー別 予約数推移（2〜4月）</div>
     <div class="chart-container">
       <!-- トリプル: 34,28,25  深層: 13,11,5  max=47 scale=150/47=3.19 -->
       <!-- 折れ線グラフ -->
@@ -594,7 +735,7 @@ svg { width:100%; display:block; }
 <!-- グラフ③ HPB店舗別 -->
 <div class="section">
   <div class="card">
-    <div class="card-title">③ HPB予約数 店舗別推移</div>
+    <div class="card-title">参考③ HPB予約数 店舗別推移（2〜4月）</div>
     <div class="chart-container">
       <!-- HPB_N: 18,14,8  HPB_S: 3,18,10  max=32 scale=150/32=4.69 -->
       <svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
@@ -639,7 +780,7 @@ svg { width:100%; display:block; }
 <!-- グラフ④ 広告売上 LTV含む -->
 <div class="section">
   <div class="card">
-    <div class="card-title">④ 月別 広告起点 売上構成（LTV含む）</div>
+    <div class="card-title">参考④ 月別 広告起点 売上構成（2〜4月）</div>
     <div class="chart-container">
       <!-- 2月: トリプル132600 深層59500 合計192100 -->
       <!-- 3月: トリプル109200 深層48900 合計158100 -->
@@ -694,7 +835,7 @@ svg { width:100%; display:block; }
 <!-- グラフ⑤ トリプルリリース 店舗別 -->
 <div class="section">
   <div class="card">
-    <div class="card-title">⑤ トリプルリリースヘッドスパ — 店舗別 CV推移</div>
+    <div class="card-title">参考⑤ トリプルリリースヘッドスパ — 店舗別CV推移（2〜4月）</div>
     <div class="chart-container">
       <!-- NEMURY: 20,19,18  新宿: 14,9,7  max=20 scale=150/20=7.5 -->
       <svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
@@ -781,7 +922,7 @@ svg { width:100%; display:block; }
   </div>
 </div>
 
-<div class="footer">NEMURY 広告CV分析 ／ 2026年2〜6月 ／ 更新 2026/7/10</div>
+<div class="footer">NEMURY 広告CV分析 ／ 2026年3〜7月 ／ 更新 2026/8/5</div>
 
 </body>
 </html>
